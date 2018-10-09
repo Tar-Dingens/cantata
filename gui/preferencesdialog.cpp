@@ -70,7 +70,7 @@ PreferencesDialog::PreferencesDialog(QWidget *parent)
     context->load();
     scrobbling->load();
     custom->load();
-    QColor iconColor = Utils::clampColor(palette().text().color());
+    QColor iconColor = palette().text().color();
     addPage(QLatin1String("collection"), server, tr("Collection"), MonoIcon::icon(FontAwesome::music, iconColor), tr("Collection Settings"));
     addPage(QLatin1String("playback"), playback, tr("Playback"), MonoIcon::icon(FontAwesome::volumeup, iconColor), tr("Playback Settings"));
     addPage(QLatin1String("interface"), interface, tr("Interface"), MonoIcon::icon(FontAwesome::sliders, iconColor), tr("Interface Settings"));

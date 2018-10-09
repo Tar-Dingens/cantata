@@ -492,7 +492,8 @@ void NowPlayingWidget::initColors()
     QToolButton btn(this);
     btn.ensurePolished();
     auto pal = btn.palette();
-    auto col = Utils::clampColor(pal.windowText().color());
+    auto col = pal.windowText().color();
+    auto colClamped = Utils::clampColor(pal.windowText().color());
     if (col==textColor()) {
         return; // No change
     }
@@ -505,7 +506,7 @@ void NowPlayingWidget::initColors()
     track->setPalette(pal);
     artist->setPalette(pal);
     time->setPalette(pal);
-    slider->updateStyleSheet(col);
+    slider->updateStyleSheet(colClamped);
     ratingWidget->setColor(col);
     infoLabel->setPalette(pal);
 }

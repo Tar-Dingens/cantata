@@ -973,7 +973,7 @@ QColor Utils::clampColor(const QColor &col)
 
 QColor Utils::monoIconColor()
 {
-    return clampColor(QApplication::palette().color(QPalette::Active, QPalette::WindowText));
+    return QApplication::palette().color(QPalette::Active, QPalette::WindowText);
 }
 
 #ifdef Q_OS_WIN

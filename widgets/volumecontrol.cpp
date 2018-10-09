@@ -92,7 +92,6 @@ void VolumeControl::selectControl()
 
 void VolumeControl::setColor(const QColor &col)
 {
-    QColor c=Utils::clampColor(col);
     mpdVol->setColor(col);
     httpVol->setColor(col);
     label->setColor(col);
